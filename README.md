@@ -41,6 +41,7 @@ Each of the following is a dictionary which should contain the entries the exact
     # dyn_path: Path to TTVFast folder (should end with c_version/)
     # dyn_path_OS: Same path as dyn_path, except that it should be compatible with OS
     # dyn_file_name: Desired name of file
+    # Coords_output_fileName: name of the desired cartesian coordinates file from TTVFast.
 
 ## Phot_Params: PHOTOMETRIC PARAMETERS
     # LC_times: list of times for which the lightcurve will be sampled [days]
@@ -51,7 +52,7 @@ Each of the following is a dictionary which should contain the entries the exact
     # transit_width: upper limit of the transit width relative to the orbital period
 
 ## Dyn_Params: DYNAMICAL PARAMETERS
-    # LC_mode: string specifying which mode of lightcurve generation to use. Can be osc, ecc and circ (osculating, eccentric and quasi-circular, respectively)
+    # LC_mode: string specifying which mode of lightcurve generation to use. Can be osc, ecc and circ (osculating, eccentric and circular, respectively)
     # m_star: stellar mass [m_sun]
     # r_star: stellar radius [r_sun]
     # masses: vector of planetary masses [m_earth]
@@ -65,7 +66,7 @@ Each of the following is a dictionary which should contain the entries the exact
     # esinomega: vector of planetary esin(omega)s at t_min [deg]
     # tmids: vector of first times of mid-transit for each planet [days]
 
-    ### ECCENTRIC/QUASI-CIRCULAR LIGHTCURVE - Keplerian parameters are AVERAGE values ###
+    ### ECCENTRIC/CIRCULAR LIGHTCURVE - Keplerian parameters are AVERAGE values ###
     # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either Keplerian or a Cartesian state vector, can be keplerian and cartesian
     # p: vector of average planetary orbital periods [days]
     # incs: vector of average planetary inclinations [deg]
