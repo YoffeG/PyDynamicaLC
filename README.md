@@ -30,7 +30,7 @@ Information regarding installation can be found here: https://github.com/ericago
 INPUT
 ===
 
-Each of the following is a DICTIONARY containing the entries with the exact names as listed below.
+Each of the following is a dictionary which should contain the entries the exact entries listed here.
 
 ## Integration_Params:
     # t_min = t0 of integration [days]
