@@ -27,6 +27,59 @@ This routine is one out of two possibilities to simulate planetary dynamics (the
 
 Information regarding installation can be found here: https://github.com/ericagol/TTVFaster
 
+INPUT
+===
+
+Each of the following is a DICTIONARY containing the entries with the exact names as listed below.
+
+## Integration_Params:
+    # t_min = t0 of integration [days]
+    # t_max = integration limit [days]
+    # dt = n-body sampling frequency [days^-1]
+
+## Paths:
+    # dyn_path: Path to TTVFast folder (should end with c_version/)
+    # dyn_path_OS: Same path as dyn_path, except that it should be compatible with OS
+    # dyn_file_name: Desired name of file
+
+## Phot_Params: PHOTOMETRIC PARAMETERS
+    # LC_times: list of times for which the lightcurve will be sampled [days]
+    # LDcoeff1: linear limb-darkening coefficient
+    # LDcoeff2: quadratic limb-darkening coefficient
+    # r = numpy array of relative planet radii [R_star]
+    # PlanetFlux: numpy array of additional fluxes from the planets (should be 0?)
+    # transit_width: upper limit of the transit width relative to the orbital period
+
+## Dyn_Params: DYNAMICAL PARAMETERS
+    # LC_mode: string specifying which mode of lightcurve generation to use. Can be osc, ecc and circ (osculating, eccentric and quasi-circular, respectively)
+    # m_star: stellar mass [m_sun]
+    # r_star: stellar radius [r_sun]
+    # masses: vector of planetary masses [m_earth]
+
+    ### OSCULATING LIGHTCURVE - Keplerian parameters are initial conditions ###
+    # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either Keplerian or a Cartesian state vector, can be keplerian and cartesian
+    # p: vector of planetary orbital periods at t_min [days]
+    # incs: vector of planetary inclinations at t_min [deg]
+    # Omegas: vector of planetary inclinations at t_min [deg]
+    # ecosomega: vector of planetary ecos(omega)s at t_min [deg]
+    # esinomega: vector of planetary esin(omega)s at t_min [deg]
+    # tmids: vector of first times of mid-transit for each planet [days]
+
+    ### ECCENTRIC/QUASI-CIRCULAR LIGHTCURVE - Keplerian parameters are AVERAGE values ###
+    # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either Keplerian or a Cartesian state vector, can be keplerian and cartesian
+    # p: vector of average planetary orbital periods [days]
+    # incs: vector of average planetary inclinations [deg]
+    # Omegas: vector of average planetary longitudes of ascending node [deg]
+    # ecosomega: vector of average planetary ecos(omega)s [deg]
+    # esinomega: vector of average planetary esin(omega)s [deg]
+    # tmids: a mean reference epoch (i.e. the constant term in the linear fit to the times of transit)
+    
+ CLARIFICATION REGARDING t_mid FOR the osculating and eccentric/quasi-circular cases:
+ 
+ Osculating: in this case, t_mid is simply the time of the first time of mid-transit with respect to t_min. The phase of the planet is then calculated by "reqinding" a Keplerian arc from that point to t_min (note: this is an approximation that may not be valid in very eccentric systems).
+ 
+ Eccentric/quasi-Circular: In this case, the value t_min represents the LINEAR APPROXIMATION of the first time of mid-transit. That is, the time of mid-transit of the given epoch in a linear ephemeris regime (we extracted this value by fitting a line to the observed times of transit. The value t_mind would then be the value of the fitted line at the given epoch).
+
 Citations
 =======
 
