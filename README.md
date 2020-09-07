@@ -75,7 +75,7 @@ Each of the following is a dictionary which should contain the entries the exact
     # esinomega: vector of average planetary esin(omega)s [deg]
     # tmids: a mean reference epoch (i.e. the constant term in the linear fit to the times of transit)
     
- CLARIFICATION REGARDING t_mid FOR the osculating and eccentric/quasi-circular cases:
+ CLARIFICATION REGARDING t_mid FOR OSCULATING AND ECCENTRIC/QUASI-CIRCULAR CASES:
  
  Osculating: in this case, t_mid is simply the time of the first time of mid-transit with respect to t_min. The phase of the planet is then calculated by "reqinding" a Keplerian arc from that point to t_min (note: this is an approximation that may not be valid in very eccentric systems).
  
