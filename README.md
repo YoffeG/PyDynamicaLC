@@ -1,12 +1,12 @@
 # PyDynamicaLC
-Python-compatible Light-curve with embedded planetary dynamics generator.
+Pythonic photodynamical model generator, using three different approximations.
 
-This code relies on several existing routines, the links to and installation guides of are listed below:
+This code relies on several existing open-source routines, the links to and installation guides of are listed below:
 
 PyAstronomy
 =======
 
-This routine is used to generate a Mandel-Agol light-lightcurve
+This routine is used to generate a Mandel-Agol light-curve
 
 Information regarding installation can be found here: https://github.com/sczesla/PyAstronomy
 
@@ -15,6 +15,8 @@ TTVFast (C) - NOTE: the required modified version may only be downloaded here
 =======
 
 This routine is one out of two possibilities to simulate planetary dynamics (the other being TTVFaster). TTVFast is a simplectic n-body integrator, whereas TTVFaster is a semi-analytic model accurate to first order in eccentricity which approximates TTVs using a series expansion.
+
+We modified TTVFast to extract therefrom the instantaneous osculating Keplerian parameters at each time of mid-transit, with which each individual transit shape and timing will be determined in the "osculating" mode.
 
 The C version of the code is in the directory c_version, the Fortran version is in fortran_version. Both versions have specific README files.
 
