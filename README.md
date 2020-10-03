@@ -51,7 +51,7 @@ Each of the following is a dictionary which should contain the entries the exact
     # LDcoeff2: quadratic limb-darkening coefficient
     # r = numpy array of relative planet radii [R_star]
     # PlanetFlux: numpy array of additional fluxes from the planets (should be 0?)
-    # transit_width: upper limit of the transit width relative to the orbital period
+    # transit_width: transit width relative to the orbital period (0-1, where 1 means the transit duration is orbital period wide, and 0 means it's infinitely narrow. Our default value is 0.05)
 
 ## Dyn_Params: DYNAMICAL PARAMETERS
     # LC_mode: string specifying which mode of lightcurve generation to use. Can be osc, ecc and circ (osculating, eccentric and quasi-circular, respectively)
