@@ -54,7 +54,7 @@ Each of the following is a dictionary which should contain the entries the exact
     # transit_width: upper limit of the transit width relative to the orbital period
 
 ## Dyn_Params: DYNAMICAL PARAMETERS
-    # LC_mode: string specifying which mode of lightcurve generation to use. Can be osc, ecc and circ (osculating, eccentric and circular, respectively)
+    # LC_mode: string specifying which mode of lightcurve generation to use. Can be osc, ecc and circ (osculating, eccentric and quasi-circular, respectively)
     # m_star: stellar mass [m_sun]
     # r_star: stellar radius [r_sun]
     # masses: vector of planetary masses [m_earth]
@@ -71,8 +71,8 @@ Each of the following is a dictionary which should contain the entries the exact
         # tmids: vector of first times of mid-transit for each planet [days]
         
     if dyn_coords == "cartesian":
-        position_vec: vector of x, y, z position of each planet at t_min, in AU. Mind that the z coordinate should have the sign opposite from the convention (i.e. z -> -z)
-        velocities_vec: vector of x_dot, y_dot, z_dot velocities of each planet at t_min, in AU/day. Mind that the z coordinate should have the sign opposite from the convention (i.e. z -> -z)
+        position_vec: vector of x, y, z position of each planet at t_min, in AU. Mind that the z coordinate should have its sign opposite from the convention (i.e. z -> -z)
+        velocities_vec: vector of x_dot, y_dot, z_dot velocities of each planet at t_min, in AU/day. Mind that the z_dot coordinate should have its sign opposite from the convention (i.e. z -> -z)
 
     ### ECCENTRIC/CIRCULAR LIGHTCURVE - Keplerian parameters are AVERAGE values ###
     # p: vector of average planetary orbital periods [days]
