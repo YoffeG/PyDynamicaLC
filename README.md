@@ -60,7 +60,8 @@ Each of the following is a dictionary which should contain the entries the exact
     # masses: vector of planetary masses [m_earth]
 
     ### OSCULATING LIGHTCURVE - Keplerian parameters are initial conditions ###
-    # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either Keplerian or a Cartesian state vector, can be keplerian and cartesian
+    # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either the Keplerian parameters or a Cartesian state vector. The input has to be specified as follows:
+    
     # if dyn_coords == "keplerian":
         # p: vector of planetary orbital periods at t_min [days]
         # incs: vector of planetary inclinations at t_min [deg]
