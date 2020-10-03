@@ -16,7 +16,7 @@ TTVFast (C) - NOTE: the required modified version may only be downloaded here
 
 This routine is one out of two possibilities to simulate planetary dynamics (the other being TTVFaster). TTVFast is a simplectic n-body integrator, whereas TTVFaster is a semi-analytic model accurate to first order in eccentricity which approximates TTVs using a series expansion.
 
-We modified TTVFast to extract therefrom the instantaneous osculating Keplerian parameters at each time of mid-transit, with which each individual transit shape and timing will be determined in the "osculating" mode.
+We modified TTVFast to extract therefrom the instantaneous osculating Keplerian parameters at each time of mid-transit, with which each individual transit shape and timing is determined in the "osculating" mode.
 
 The C version of the code is in the directory c_version, the Fortran version is in fortran_version. Both versions have specific README files.
 
