@@ -80,7 +80,7 @@ Each of the following is a dictionary which should contain the entries the exact
     # Omegas: vector of average planetary longitudes of ascending node [deg]
     # ecosomega: vector of average planetary ecos(omega)s [deg]
     # esinomega: vector of average planetary esin(omega)s [deg]
-    # tmids: a mean reference epoch (i.e. the constant term in the linear fit to the times of transit)
+    # tmids: the initial time of transit (according to the mean ephemeris)
     
  CLARIFICATION REGARDING t_mid FOR OSCULATING AND ECCENTRIC/QUASI-CIRCULAR CASES:
  
