@@ -49,7 +49,7 @@ Each of the following is a dictionary which should contain the entries the exact
     # LC_times: list of times for which the lightcurve will be sampled [days]
     # LDcoeff1: linear limb-darkening coefficient
     # LDcoeff2: quadratic limb-darkening coefficient
-    # r = numpy array of relative planet radii [R_star]
+    # r = numpy array of relative planet radii [r/R_star]
     # PlanetFlux: numpy array of additional fluxes from the planets (should be 0?)
     # transit_width: transit width relative to the orbital period (0-1, where 1 means the transit duration is orbital period wide, and 0 means it's infinitely narrow. Our default value is 0.05)
 
