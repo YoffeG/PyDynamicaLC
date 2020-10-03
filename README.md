@@ -61,15 +61,19 @@ Each of the following is a dictionary which should contain the entries the exact
 
     ### OSCULATING LIGHTCURVE - Keplerian parameters are initial conditions ###
     # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either Keplerian or a Cartesian state vector, can be keplerian and cartesian
-    # p: vector of planetary orbital periods at t_min [days]
-    # incs: vector of planetary inclinations at t_min [deg]
-    # Omegas: vector of planetary inclinations at t_min [deg]
-    # ecosomega: vector of planetary ecos(omega)s at t_min [deg]
-    # esinomega: vector of planetary esin(omega)s at t_min [deg]
-    # tmids: vector of first times of mid-transit for each planet [days]
+    # if dyn_coords == "keplerian":
+        # p: vector of planetary orbital periods at t_min [days]
+        # incs: vector of planetary inclinations at t_min [deg]
+        # Omegas: vector of planetary inclinations at t_min [deg]
+        # ecosomega: vector of planetary ecos(omega)s at t_min [deg]
+        # esinomega: vector of planetary esin(omega)s at t_min [deg]
+        # tmids: vector of first times of mid-transit for each planet [days]
+        
+    if dyn_coords == "cartesian":
+        position_vec: vector of x, y, z position of each planet at t_min, in AU. Mind that the z coordinate should have the sign opposite from the convention             (i.e. z -> -z)
+        velocities_vec: vector of x_dot, y_dot, z_dot velocities of each planet at t_min, in AU/day. Mind that the z coordinate should have the sign opposite             from the convention (i.e. z -> -z)
 
     ### ECCENTRIC/CIRCULAR LIGHTCURVE - Keplerian parameters are AVERAGE values ###
-    # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either Keplerian or a Cartesian state vector, can be keplerian and cartesian
     # p: vector of average planetary orbital periods [days]
     # incs: vector of average planetary inclinations [deg]
     # Omegas: vector of average planetary longitudes of ascending node [deg]
