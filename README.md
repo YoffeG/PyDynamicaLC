@@ -95,7 +95,7 @@ Each of the following is a dictionary which should contain the exact entries lis
     # sampling_efficiency: MultiNest parameter (see https://johannesbuchner.github.io/PyMultiNest/). Recommended value: 0.5.
     # evidence_tolerance: MultiNest parameter (see link above). Recommended value: 0.01.
     
-## Analyzer_params: Plotting and error-estimation of MultiNet output
+## Analyzer_params: Plotting and error-estimation of MultiNest output
     # err: can be either "percentile" or "chi2" (string). This performs a MultiNest-independent error estimation in the following manner:
         percentile: only the delta_loglike < 3sigma (relative to the best-fit) is considered. The best-fit is then the median with the ±1sigma uncertainties are the 16th and 84th percentiles.
         chi2: best-fit is unchanged, and the ±1sigma uncertainties are calculatesd a the absolute difference of the best-fit value and the minimal and maximal values in the 1sigma range of delta_chi2.
@@ -118,7 +118,7 @@ For TTVFast, please cite [Deck &amp; Agol (2014)](https://iopscience.iop.org/art
 
 For TTVFaster, please cite [Agol &amp; Deck (2015)](http://arxiv.org/abs/1509.01623)
 
-For MultiNest and PyMultiNest, please cite [], [], respectively.
+For MultiNest and PyMultiNest, please cite [Feroz et al. (2008)] (https://arxiv.org/abs/0809.3437), [Buchner et al. (2014)] (https://www.aanda.org/articles/aa/abs/2014/04/aa22971-13/aa22971-13.html), respectively.
 
 Please check back for updates to ensure that you are using the latest version.
 
