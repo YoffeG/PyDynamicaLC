@@ -1,8 +1,8 @@
 # PyDynamicaLC
 Pythonic photodynamical model generator, using three different approximations. This code was tested on a Linux platform.
 
-## All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows: from PyDynamicaLC import * (see example script)
-## List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner
+All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows: from PyDynamicaLC import * (see example script)
+List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner
 
 This code relies on several existing open-source routines, the links to and installation guides of are listed below:
 
@@ -85,7 +85,7 @@ Each of the following is a dictionary which should contain the exact entries lis
     # esinomega: vector of average planetary esin(omega)s [deg]
     # tmids: the initial time of transit (according to the mean ephemeris)
     
-## TO INITIATE LIGHT-CURVE GENERATOR (LightCurve_Gen):LightCurve_Gen(Dyn_Params, Phot_Params, Integration_Params, Paths, verbose) (see example script)
+## To iniriate light-curve generator (LightCurve_Gen):LightCurve_Gen(Dyn_Params, Phot_Params, Integration_Params, Paths, verbose) (see example script)
     
 RUNNING MULTINEST
 ===
@@ -114,8 +114,8 @@ The following two dictionaries are required to run the MultiNest fitter. The fit
         # plot_bestfit_LC: Boolean. If true - plots generates a light-curve with the best-fit values and plots it against the data.
         # plot_corner: uses corner.py (https://corner.readthedocs.io/en/latest/) to generate corner plots for all parameters within the delta_chi2 < 3sigma range. NOTE: this option requires corner.py to be installed!
         
- ## TO INITIATE MULTINEST FITTER: run_multinest(MultiNest_params, Dyn_Params, Phot_Params, Integration_Params, Paths) (see example script)
- ## TO INITIATE MULTINEST ANALYZER: multinest_analyzer(params, analyzer_params, Dyn_Params, Phot_Params, Integration_Params, Paths) (see example script)
+ ## To initiate MultiNest fitter: run_multinest(MultiNest_params, Dyn_Params, Phot_Params, Integration_Params, Paths) (see example script)
+ ## To initiate MultiNest analyzer: multinest_analyzer(params, analyzer_params, Dyn_Params, Phot_Params, Integration_Params, Paths) (see example script)
         
 OUTPUT
 ===
