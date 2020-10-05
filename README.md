@@ -91,7 +91,7 @@ Each of the following is a dictionary which should contain the exact entries lis
     # Omegas: vector of average planetary longitudes of ascending node [deg]
     # ecosomega: vector of average planetary ecos(omega)s [deg]
     # esinomega: vector of average planetary esin(omega)s [deg]
-    # tmids: the initial time of transit (according to the mean ephemeris)
+    # tmids: vector of initial times of transit (according to the mean ephemeris) [days]
     
 ## To initiate light-curve generator (LightCurve_Gen):LightCurve_Gen(Dyn_Params, Phot_Params, Integration_Params, Paths, verbose) (see example script)
     
