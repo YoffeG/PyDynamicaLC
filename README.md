@@ -153,7 +153,7 @@ OUTPUT
 Citations
 =======
 
-If you use this code, please cite Yoffe, Ofir and Aharonson (2020), ApJ.
+If you use this code, please cite [Yoffe et al. (2020)](link).
 
 For TTVFast, please cite [Deck &amp; Agol (2014)](https://iopscience.iop.org/article/10.1088/0004-637X/787/2/132/pdf).
 
