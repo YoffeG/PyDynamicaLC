@@ -33,6 +33,13 @@ This routine is one out of two possibilities to simulate planetary dynamics (the
 
 Information regarding installation can be found here: https://github.com/ericagol/TTVFaster
 
+PyMultiNest
+=======
+
+A multi-modal Markov Chain Monte Carlo algorithm with implementation in Python used as our fitter of choice.
+
+Information regarding installation can be found here: https://johannesbuchner.github.io/PyMultiNest/
+
 INPUT
 ===
 
