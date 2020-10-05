@@ -98,7 +98,7 @@ Each of the following is a dictionary which should contain the exact entries lis
 RUNNING MULTINEST
 ===
 
-The following two dictionaries are required to run the MultiNest fitter. The fitter uses TTVFaster to optimize the planetary masses, delta_ex and delta_ey (ex and ey for the inner planets) of the input system. Since TTVFaster is currently the only option for the optimization routine, LC_mode should either be "circ" or "ecc".
+The following two dictionaries are required to run the MultiNest fitter. The fitter uses TTVFaster-based light-curve modelling to optimize the planetary masses, delta_ex and delta_ey (ex and ey for the inner planets) of the input system. Since TTVFaster is currently the only option for the optimization routine, LC_mode should either be "circ" or "ecc".
       
  ## MultiNest_params: Optimization parameters for MultiNest
     # mode: Optimization mode. At this moment, this can only be "TTVFaster" (string)
