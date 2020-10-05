@@ -102,7 +102,24 @@ Each of the following is a dictionary which should contain the exact entries lis
         # plot_posterior: Boolean. If true - plots the MultiNest posterior distribution for all parameters. 1-5 sigma ranges are color-coded.
         # plot_bestfit_LC: Boolean. If true - plots generates a light-curve with the best-fit values and plots it against the data.
         # plot_corner: uses corner.py (https://corner.readthedocs.io/en/latest/) to generate corner plots for all parameters within the delta_chi2 < 3sigma range. NOTE: this option requires corner.py to be installed!
+        
+OUTPUT
+===
+
+## LightCurve_Gen:
+    This function returns a dictionary containing the following entries:
+        # times: list of lists times of mid-transit for all planets [days]
+        # ttvs: list of lists of TTVs for all planets [days]
+        # lin_eph: list of lists of times of mean ephemeris mid-transit times for all planets [days]
+        # lightcurve_singlePlanets: list of light-curves for individual planets separately [norm. flux]
+        # lightcurve_allPlanets: single multi-planet light-curve [norm. flux]
     
+## run_multinest:
+    Once this function is initiated - MultiNest optimization commences.
+
+## multinest_analyzer:
+    This function analyzes multinest output and plots relevant plots, as described above.
+
  CLARIFICATION REGARDING t_mid FOR OSCULATING AND ECCENTRIC/QUASI-CIRCULAR CASES:
  
  Osculating: in this case, t_mid is simply the time of the first time of mid-transit with respect to t_min. The phase of the planet is then calculated by "reqinding" a Keplerian arc from that point to t_min (note: this is an approximation that may not be valid in very eccentric systems).
