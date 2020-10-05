@@ -1,6 +1,8 @@
 # PyDynamicaLC
 Pythonic photodynamical model generator, using three different approximations. This code was tested on a Linux platform.
 
+## All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows: from PyDynamicaLC import * (see example script)
+
 This code relies on several existing open-source routines, the links to and installation guides of are listed below:
 
 PyAstronomy
@@ -82,6 +84,13 @@ Each of the following is a dictionary which should contain the exact entries lis
     # esinomega: vector of average planetary esin(omega)s [deg]
     # tmids: the initial time of transit (according to the mean ephemeris)
     
+## TO INITIATE LIGHT-CURVE GENERATOR (LightCurve_Gen):LightCurve_Gen(Dyn_Params, Phot_Params, Integration_Params, Paths, verbose) (see example script)
+    
+RUNNING MULTINEST
+===
+
+The following two dictionaries are required to run the MultiNest fitter. The fitter uses TTVFaster to optimize the planetary masses, delta_ex and delta_ey (ex and ey for the inner planets) of the input system. Since TTVFaster is currently the only option for the optimization routine, LC_mode should either be "circ" or "ecc".
+      
  ## MultiNest_params: Optimization parameters for MultiNest
     # mode: Optimization mode. At this moment, this can only be "TTVFaster" (string)
     # data_LC: normalized flux of the multi-planet data light-curve. Should be the length of LC_times (np.array)
@@ -99,16 +108,20 @@ Each of the following is a dictionary which should contain the exact entries lis
     # err: can be either "percentile" or "chi2" (string). This performs a MultiNest-independent error estimation in the following manner:
         percentile: only the delta_loglike < 3sigma (relative to the best-fit) is considered. The best-fit is then the median with the ±1sigma uncertainties are the 16th and 84th percentiles.
         chi2: best-fit is unchanged, and the ±1sigma uncertainties are calculatesd a the absolute difference of the best-fit value and the minimal and maximal values in the 1sigma range of delta_chi2.
+        # fontsize: fontsize of the plots (float/int)
         # plot_posterior: Boolean. If true - plots the MultiNest posterior distribution for all parameters. 1-5 sigma ranges are color-coded.
         # plot_bestfit_LC: Boolean. If true - plots generates a light-curve with the best-fit values and plots it against the data.
         # plot_corner: uses corner.py (https://corner.readthedocs.io/en/latest/) to generate corner plots for all parameters within the delta_chi2 < 3sigma range. NOTE: this option requires corner.py to be installed!
+        
+ ## TO INITIATE MULTINEST FITTER: run_multinest(MultiNest_params, Dyn_Params, Phot_Params, Integration_Params, Paths) (see example script)
+ ## TO INITIATE MULTINEST ANALYZER: multinest_analyzer(params, analyzer_params, Dyn_Params, Phot_Params, Integration_Params, Paths) (see example script)
         
 OUTPUT
 ===
 
 ## LightCurve_Gen:
     This function returns a dictionary containing the following entries:
-        # times: list of lists times of mid-transit for all planets [days]
+        # times: list of lists of times of mid-transit for all planets [days]
         # ttvs: list of lists of TTVs for all planets [days]
         # lin_eph: list of lists of times of mean ephemeris mid-transit times for all planets [days]
         # lightcurve_singlePlanets: list of light-curves for individual planets separately [norm. flux]
