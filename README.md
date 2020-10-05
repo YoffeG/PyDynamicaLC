@@ -113,7 +113,7 @@ The following two dictionaries are required to run the MultiNest fitter. The fit
     # sampling_efficiency: MultiNest parameter (see https://johannesbuchner.github.io/PyMultiNest/). Recommended value: 0.5.
     # evidence_tolerance: MultiNest parameter (see link above). Recommended value: 0.01.
     
-## Analyzer_params: Plotting and error-estimation of MultiNest output
+## Analyzer_params: Posterior distribution analysis, error-estimation and plotting of MultiNest output
     # err: can be either "percentile" or "chi2" (string). This performs a MultiNest-independent error estimation in the following manner:
         percentile: only the delta_loglike < 3sigma (relative to the best-fit) is considered. The best-fit is then the median with the ±1sigma uncertainties are the 16th and 84th percentiles.
         chi2: best-fit is unchanged, and the ±1sigma uncertainties are calculatesd a the absolute difference of the best-fit value and the minimal and maximal values in the 1sigma range of delta_chi2.
