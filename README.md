@@ -112,11 +112,11 @@ Each of the following is a dictionary which should contain the exact entries lis
 Citations
 =======
 
-If you use this code, please cite Yoffe, Ofir and Aharonson (2020), ApJ 
+If you use this code, please cite Yoffe, Ofir and Aharonson (2020), ApJ.
 
-For TTVFast, please cite [Deck &amp; Agol (2014)](https://iopscience.iop.org/article/10.1088/0004-637X/787/2/132/pdf)
+For TTVFast, please cite [Deck &amp; Agol (2014)](https://iopscience.iop.org/article/10.1088/0004-637X/787/2/132/pdf).
 
-For TTVFaster, please cite [Agol &amp; Deck (2015)](http://arxiv.org/abs/1509.01623)
+For TTVFaster, please cite [Agol &amp; Deck (2015)](http://arxiv.org/abs/1509.01623).
 
 For MultiNest and PyMultiNest, please cite [Feroz et al. (2008)](https://arxiv.org/abs/0809.3437), [Buchner et al. (2014)](https://www.aanda.org/articles/aa/abs/2014/04/aa22971-13/aa22971-13.html), respectively.
 
