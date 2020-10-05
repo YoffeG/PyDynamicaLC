@@ -1,7 +1,8 @@
 # PyDynamicaLC
 Pythonic photodynamical model generator, using three different approximations. This code was tested on a Linux platform.
 
-All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows: from PyDynamicaLC import * (see example script)
+All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows: from PyDynamicaLC import * (see example script).
+
 List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner
 
 This code relies on several existing open-source routines, the links to and installation guides of are listed below:
