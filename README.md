@@ -1,5 +1,5 @@
 # PyDynamicaLC
-Pythonic photodynamical model generator, using three different approximations.
+Pythonic photodynamical model generator, using three different approximations. This code was tested on a Linux platform.
 
 This code relies on several existing open-source routines, the links to and installation guides of are listed below:
 
@@ -32,7 +32,7 @@ Information regarding installation can be found here: https://github.com/ericago
 INPUT
 ===
 
-Each of the following is a dictionary which should contain the entries the exact entries listed here.
+Each of the following is a dictionary which should contain the exact entries listed here.
 
 ## Integration_Params:
     # t_min = t0 of integration [days]
@@ -94,6 +94,14 @@ Each of the following is a dictionary which should contain the entries the exact
     # basename: a string containing the header of all MultiNest files to be generated
     # sampling_efficiency: MultiNest parameter (see https://johannesbuchner.github.io/PyMultiNest/). Recommended value: 0.5.
     # evidence_tolerance: MultiNest parameter (see link above). Recommended value: 0.01.
+    
+## Analyzer_params: Plotting and error-estimation of MultiNet output
+    # err: can be either "percentile" or "chi2" (string). This performs a MultiNest-independent error estimation in the following manner:
+        percentile: only the delta_loglike < 3sigma (relative to the best-fit) is considered. The best-fit is then the median with the ±1sigma uncertainties are the 16th and 84th percentiles.
+        chi2: best-fit is unchanged, and the ±1sigma uncertainties are calculatesd a the absolute difference of the best-fit value and the minimal and maximal values in the 1sigma range of delta_chi2.
+        # plot_posterior: Boolean. If true - plots the MultiNest posterior distribution for all parameters. 1-5 sigma ranges are color-coded.
+        # plot_bestfit_LC: Boolean. If true - plots generates a light-curve with the best-fit values and plots it against the data.
+        # plot_corner: uses corner.py (https://corner.readthedocs.io/en/latest/) to generate corner plots for all parameters within the delta_chi2 < 3sigma range. NOTE: this option requires corner.py to be installed!
     
  CLARIFICATION REGARDING t_mid FOR OSCULATING AND ECCENTRIC/QUASI-CIRCULAR CASES:
  
