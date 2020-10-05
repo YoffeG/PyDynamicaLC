@@ -82,6 +82,19 @@ Each of the following is a dictionary which should contain the entries the exact
     # esinomega: vector of average planetary esin(omega)s [deg]
     # tmids: the initial time of transit (according to the mean ephemeris)
     
+ ## MultiNest_params: Optimization parameters for MultiNest
+    # mode: Optimization mode. At this moment, this can only be "TTVFaster" (string)
+    # data_LC: normalized flux of the multi-planet data light-curve. Should be the length of LC_times (np.array)
+    # data_LC_err: errors of the normalized flux light-curve. Should be the length of data_LC/LC_times (np.array)
+    # nPl: number of planets (integer)
+    # mass_prior: list specifying mass prior parameters. Supposed to contain 3 components: "lin" or "log" strings specifying linear or logarithmic prior, and lower and upper limit numbers. In the case of "lin", the limit numbers are the absolute mass limits of the prior in [m_earth]. In the case of "log" the limit numbers are *powers* (of base ten) of the prior (the whole number in units of m_earth).
+    # ex_prior: list specifyin ecosomega prior. Similar to mass_prior with units of eccentricity, but in addition - a Rayleigh distribution of the prior can be chosen with a string "ray", then there is only one additional required number in the list - the scale-width of the distribution.
+    # ey_prior: similar to ex_prior.
+    # verbose: Boolean.
+    # basename: a string containing the header of all MultiNest files to be generated
+    # sampling_efficiency: MultiNest parameter (see https://johannesbuchner.github.io/PyMultiNest/). Recommended value: 0.5.
+    # evidence_tolerance: MultiNest parameter (see link above). Recommended value: 0.01.
+    
  CLARIFICATION REGARDING t_mid FOR OSCULATING AND ECCENTRIC/QUASI-CIRCULAR CASES:
  
  Osculating: in this case, t_mid is simply the time of the first time of mid-transit with respect to t_min. The phase of the planet is then calculated by "reqinding" a Keplerian arc from that point to t_min (note: this is an approximation that may not be valid in very eccentric systems).
@@ -96,6 +109,8 @@ If you use this code, please cite Yoffe, Ofir and Aharonson (2020), ApJ
 For TTVFast, please cite [Deck &amp; Agol (2014)](https://iopscience.iop.org/article/10.1088/0004-637X/787/2/132/pdf)
 
 For TTVFaster, please cite [Agol &amp; Deck (2015)](http://arxiv.org/abs/1509.01623)
+
+For MultiNest and PyMultiNest, please cite [], [], respectively.
 
 Please check back for updates to ensure that you are using the latest version.
 
