@@ -118,7 +118,7 @@ For TTVFast, please cite [Deck &amp; Agol (2014)](https://iopscience.iop.org/art
 
 For TTVFaster, please cite [Agol &amp; Deck (2015)](http://arxiv.org/abs/1509.01623)
 
-For MultiNest and PyMultiNest, please cite [Feroz et al. (2008)] (https://arxiv.org/abs/0809.3437), [Buchner et al. (2014)] (https://www.aanda.org/articles/aa/abs/2014/04/aa22971-13/aa22971-13.html), respectively.
+For MultiNest and PyMultiNest, please cite [Feroz et al. (2008)](https://arxiv.org/abs/0809.3437), [Buchner et al. (2014)](https://www.aanda.org/articles/aa/abs/2014/04/aa22971-13/aa22971-13.html), respectively.
 
 Please check back for updates to ensure that you are using the latest version.
 
