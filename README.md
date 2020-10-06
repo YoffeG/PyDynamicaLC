@@ -7,7 +7,7 @@ from PyDynamicaLC import *
 
 List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner
 
-This code was tested on a Linux שמג OSx platform.
+This code was tested on a Linux and OSx platform.
 
 This code relies on several existing open-source routines, the links to and installation guides of are listed below.
 
