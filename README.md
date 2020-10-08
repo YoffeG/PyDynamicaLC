@@ -1,5 +1,5 @@
 # PyDynamicaLC
-Pythonic photodynamical standalone model generator, using three different approximations, in addition - an MCMC-coupled version also exists, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](link).
+Pythonic photodynamical standalone model generator, using three different approximations, in addition - an MCMC-coupled version is also provided, which allows exhibits of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](link).
 
 All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows (see example script):
 
@@ -26,7 +26,7 @@ TTVFast (C) - NOTE: the required modified version may only be downloaded here
 
 This routine is one out of two possibilities to simulate planetary dynamics (the other being TTVFaster). TTVFast is a simplectic n-body integrator, whereas TTVFaster is a semi-analytic model accurate to first order in eccentricity which approximates TTVs using a series expansion.
 
-We modified TTVFast to extract therefrom the instantaneous osculating Keplerian parameters at each time of mid-transit, with which each individual transit shape and timing is determined in the "osculating" mode.
+We modified TTVFast to output the instantaneous osculating Keplerian parameters at each time of mid-transit, with which each individual transit shape and timing is determined in the "osculating" mode.
 
 The C version of the code is in the directory c_version, the Fortran version is in fortran_version. Both versions have specific README files.
 
@@ -52,14 +52,14 @@ INPUT
 Each of the following is a dictionary which should contain the exact entries listed here.
 
 ## Integration_Params:
-    # t_min = t0 of integration [days]
-    # t_max = integration limit [days]
-    # dt = n-body sampling frequency [days^-1]
-
+    # t_min = time of the start of integration [days]
+    # t_max = time of the endof integration [days]
+    # dt = time step during the integration [days]
+    
 ## Paths:
-    # dyn_path: Path to TTVFast folder (should end with c_version/)
+    # dyn_path: Path to TTVFast folder (should end with "c_version/")
     # dyn_path_OS: Same path as dyn_path, except that it should be compatible with OS
-    # dyn_file_name: Desired name of file
+    # dyn_file_name: This file is internally used by TTVFast to receive the initial condition and integration parameters. This string is the header of file - make sure to change it if several simulations are run simultaneously
     # Coords_output_fileName: name of the desired cartesian coordinates file from TTVFast.
 
 ## Phot_Params: PHOTOMETRIC PARAMETERS
@@ -67,17 +67,16 @@ Each of the following is a dictionary which should contain the exact entries lis
     # LDcoeff1: linear limb-darkening coefficient
     # LDcoeff2: quadratic limb-darkening coefficient
     # r = numpy array of relative planet radii [r/R_star]
-    # PlanetFlux: numpy array of additional fluxes from the planets (should be 0?)
-    # transit_width: transit width relative to the orbital period (0-1, where 1 means the transit duration is orbital period wide, and 0 means it's infinitely narrow. Our default value is 0.05)
+    # transit_width: a phase-window used to refine the time of mid-transit. if A is the max-TTV-amplitude, then transit_width should be more than the [transit duration + A] and significantly less than [0.5 - A]. Default: 0.05.
 
 ## Dyn_Params: DYNAMICAL PARAMETERS
-    # LC_mode: string specifying which mode of lightcurve generation to use. Can be osc, ecc and circ (osculating, eccentric and quasi-circular, respectively)
+    # LC_mode: string specifying which mode of lightcurve generation to use. Can be "osc", "ecc" or "circ" (osculating, eccentric and quasi-circular, respectively)
     # m_star: stellar mass [m_sun]
     # r_star: stellar radius [r_sun]
     # masses: vector of planetary masses [m_earth]
 
-    ### OSCULATING LIGHTCURVE - Keplerian parameters are initial conditions ###
-    # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either the Keplerian parameters or a Cartesian state vector. The input has to be specified as follows:
+    ### OSCULATING LIGHTCURVE - Keplerian parameters are the INITIAL CONDITIONS ###
+    # dyn_coords: for LC_mode = osc, the initial conditions input can be input as either the Keplerian parameters or a Cartesian state vector. The six-element input has to be specified as follows:
     
     # if dyn_coords == "keplerian":
         # p: vector of planetary orbital periods at t_min [days]
@@ -89,7 +88,7 @@ Each of the following is a dictionary which should contain the exact entries lis
         
     if dyn_coords == "cartesian":
         position_vec: vector of x, y, z position of each planet at t_min, in AU. Mind that the z coordinate should have its sign opposite from the convention (i.e. z -> -z)
-        velocities_vec: vector of x_dot, y_dot, z_dot velocities of each planet at t_min, in AU/day. Mind that the z_dot coordinate should have its sign opposite from the convention (i.e. z -> -z)
+        velocities_vec: vector of x_dot, y_dot, z_dot velocities of each planet at t_min, in AU/day. Same coordiantes system as [x, y, z].
 
     ### ECCENTRIC/CIRCULAR LIGHTCURVE - Keplerian parameters are AVERAGE values ###
     # p: vector of average planetary orbital periods [days]
@@ -104,14 +103,14 @@ Each of the following is a dictionary which should contain the exact entries lis
 RUNNING MULTINEST
 ===
 
-The following two dictionaries are required to run the MultiNest fitter. The fitter uses TTVFaster-based light-curve modelling to optimize the planetary masses, delta_ex and delta_ey (ex and ey for the inner planets) of the input system. Since TTVFaster is currently the only option for the optimization routine, LC_mode should either be "circ" or "ecc".
+The following two dictionaries are required to run the MultiNest fitter example. The fitter uses TTVFaster-based dynamical modelling to optimize the planetary masses, delta_ex and delta_ey (ex and ey for the inner planets) of the input system. Since TTVFaster is currently the only option for the optimization routine, LC_mode should either be "circ" or "ecc".
       
  ## MultiNest_params: Optimization parameters for MultiNest
     # mode: Optimization mode. At this moment, this can only be "TTVFaster" (string)
     # data_LC: normalized flux of the multi-planet data light-curve. Should be the length of LC_times (np.array)
     # data_LC_err: errors of the normalized flux light-curve. Should be the length of data_LC/LC_times (np.array)
     # nPl: number of planets (integer)
-    # mass_prior: list specifying mass prior parameters. Supposed to contain 3 components: "lin" or "log" strings specifying linear or logarithmic prior, and lower and upper limit numbers. In the case of "lin", the limit numbers are the absolute mass limits of the prior in [m_earth]. In the case of "log" the limit numbers are *powers* (of base ten) of the prior (the whole number in units of m_earth).
+    # mass_prior: list specifying mass prior parameters. Supposed to contain 3 components: "lin" or "log" strings specifying linear or logarithmic prior, and lower and upper limit numbers. In the case of "lin", the limit numbers are the absolute mass limits of the prior in [m_earth]. In the case of "log" the limit numbers are *powers* (of base ten) of the prior (the whole number in units of m_earth). For e.g.: ["lin" 2 20] will search in the range of 2 to 20  Earth masses, while ["log" -1 3] will search in the range of 0.1 to 1000 Earth masses.
     # ex_prior: list specifying ecosomega prior. Similar to mass_prior with units of eccentricity, but in addition - a Rayleigh distribution of the prior can be chosen with a string "ray", then there is only one additional required number in the list - the scale-width of the distribution.
     # ey_prior: similar to ex_prior.
     # verbose: Boolean.
@@ -121,8 +120,8 @@ The following two dictionaries are required to run the MultiNest fitter. The fit
     
 ## Analyzer_params: Posterior distribution analysis, error-estimation and plotting of MultiNest output
     # err: can be either "percentile" or "chi2" (string). This performs a MultiNest-independent error estimation in the following manner:
-        percentile: only the delta_loglike < 3sigma (relative to the best-fit) is considered. The best-fit is then the median with the ±1sigma uncertainties are the 16th and 84th percentiles.
-        chi2: best-fit is unchanged, and the ±1sigma uncertainties are calculatesd a the absolute difference of the best-fit value and the minimal and maximal values in the 1sigma range of delta_chi2.
+        percentile: using the loglike output, only points with relative likelihood $<10^{-3}$ times that of the best-fit are considered ("burn-in"). The the ±1sigma uncertainties are then the 16th and 84th percentiles of the remaing points.
+        chi2: the ±1sigma uncertainties are calculatesd using the absolute difference of the best-fit value and the minimal and maximal values in the 1sigma range of delta_chi2.
         # fontsize: fontsize of the plots (float/int)
         # plot_posterior: Boolean. If true - plots the MultiNest posterior distribution for all parameters. 1-5 sigma ranges are color-coded.
         # plot_bestfit_LC: Boolean. If true - plots generates a light-curve with the best-fit values and plots it against the data.
