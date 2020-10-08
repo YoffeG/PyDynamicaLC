@@ -79,10 +79,10 @@ fontsize = 12
 LC_mode = "circ"
 dyn_coords = "keplerian"
 
-Dyn_path = ".../c_version_main/"
-Dyn_path_OS = ".../c_version_main/"  # Path used by os to reach TTVFast C folder
+Dyn_path = "/c_version_main/"
+Dyn_path_OS = "/c_version_main/"  # Path used by os to reach TTVFast C folder
 
-LC = np.loadtxt(".../LC_inputTest.txt") # Uploading example noisy lightcurve and its uncertainties
+LC = np.loadtxt("/LC_inputTest.txt") # Uploading example noisy lightcurve and its uncertainties
 LC_times, LC_noise = LC[0], LC[2]
 verbose = True # Verbosity
 
@@ -129,6 +129,7 @@ if generate_LC == True:
 
     #### Plotting TTVs ####
     for i in range(len(TTVs)):
+        plt.figure(1)
         plt.subplot(len(TTVs), 1, i + 1)
         if i == 0:
             plt.title("TTVs", fontsize = fontsize)
@@ -141,6 +142,7 @@ if generate_LC == True:
 
     #### Plotting individual light-curves ####
     for i in range(len(lightcurve_individual)):
+        plt.figure(2)
         plt.subplot(len(lightcurve_individual), 1, i + 1)
         if i == 0:
             plt.title("Individual planet light-curves", fontsize = fontsize)
@@ -153,7 +155,7 @@ if generate_LC == True:
     plt.show()
 
     #### Plotting multi-planet light-curve
-    plt.figure()
+    plt.figure(3)
     plt.title("Multi-planet light-curve", fontsize = fontsize)
     plt.plot(LC_times, multiplanet_lightcurve, color = 'black')
     plt.xlabel("Time [days]", fontsize = fontsize)
