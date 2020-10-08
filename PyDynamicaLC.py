@@ -1,4 +1,3 @@
-import json
 import os
 from pylab import *
 from PyAstronomy.modelSuite import forTrans as ft
@@ -933,6 +932,7 @@ def multinest_analyzer(params, analyzer_params, Dyn_Params, Phot_Params, Integra
                 ex = data[2 + nPl + i]
                 ey = data[2 + 2 * nPl + i]
 
+                plt.figure(4)
                 plt.subplot(3,1,1)
                 plt.title("Best-fit Likelihood = " +str(round(min(abs(chi2)), 1)) + " [$-log(\mathscr{L})$]", fontsize = fontsize)
                 plt.ylabel("$-\Delta log(\mathscr{L})$", fontsize = fontsize)
@@ -1038,6 +1038,7 @@ def multinest_analyzer(params, analyzer_params, Dyn_Params, Phot_Params, Integra
                     labels.append("$\Delta e_x{0}$".format(i))
                     labels.append("$\Delta e_y{0}$".format(i))
 
+            plt.figure(5)
             figure = corner.corner(transpose(all_params), labels = labels, quantiles=[0.16, 0.5, 0.84], show_titles=True, title_kwargs={"fontsize": 16})
             plt.show()
 
@@ -1055,7 +1056,7 @@ def multinest_analyzer(params, analyzer_params, Dyn_Params, Phot_Params, Integra
             #### Generating model ####
             bestFit_model = LightCurve_Gen(Dyn_Params, Phot_Params, Integration_Params, Paths, False)["lightcurve_allPlanets"]
 
-            plt.figure()
+            plt.figure(6)
             plt.title("Best-fit model vs. data", fontsize = fontsize)
             plt.plot(Phot_Params["LC_times"], params["data_LC"], 's', color = 'black', label = 'Data')
             plt.plot(Phot_Params["LC_times"], bestFit_model, color = 'orange', label = 'Best-fit model')
