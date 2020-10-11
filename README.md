@@ -1,5 +1,5 @@
 # PyDynamicaLC
-Pythonic photodynamical model generator, using three different approximations, in addition - an MCMC-coupled version is also provided, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](link). NOTE: please refer to our paper and the README provided here to fully fathom the approximations utilized in each of the configurations in this code.
+Pythonic photodynamical model generator, using three different configurations (quasi-circular, eccentric and osculating), in addition - an MCMC-coupled version is also provided, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](link). NOTE: please refer to our paper and the README provided here to fully fathom the approximations utilized in each of the configurations in this code.
 
 All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows (see example script):
 
@@ -90,7 +90,7 @@ Each of the following is a dictionary which should contain the exact entries lis
         position_vec: vector of x, y, z position of each planet at t_min, in AU. Mind that the z coordinate should have its sign opposite from the convention (i.e. z -> -z)
         velocities_vec: vector of x_dot, y_dot, z_dot velocities of each planet at t_min, in AU/day. Same coordiantes system as [x, y, z].
 
-    ### ECCENTRIC/CIRCULAR LIGHTCURVE - Keplerian parameters are AVERAGE values ###
+    ### ECCENTRIC/QUASI-CIRCULAR LIGHTCURVE - Keplerian parameters are AVERAGE values ###
     # p: vector of average planetary orbital periods [days]
     # incs: vector of average planetary inclinations [deg]
     # Omegas: vector of average planetary longitudes of ascending node [deg]
