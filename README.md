@@ -1,5 +1,5 @@
 # PyDynamicaLC
-Pythonic photodynamical standalone model generator, using three different approximations, in addition - an MCMC-coupled version is also provided, which allows exhibits of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](link).
+Pythonic photodynamical model generator, using three different approximations, in addition - an MCMC-coupled version is also provided, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](link). NOTE: please refer to our paper and the README provided here to fully fathom the approximations utilized in each of the configurations in this code.
 
 All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows (see example script):
 
