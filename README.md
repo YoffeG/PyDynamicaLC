@@ -84,8 +84,8 @@ Each of the following is a dictionary which should contain the exact entries lis
         # p: vector of planetary orbital periods at t_min [days]
         # incs: vector of planetary inclinations at t_min [deg]
         # Omegas: vector of planetary inclinations at t_min [deg]
-        # ecosomega: vector of planetary ecos(omega)s at t_min [deg]
-        # esinomega: vector of planetary esin(omega)s at t_min [deg]
+        # ecosomega: vector of planetary ecos(omega)s at t_min
+        # esinomega: vector of planetary esin(omega)s at t_min
         # tmids: vector of first times of mid-transit for each planet [days]
         
     if dyn_coords == "cartesian":
