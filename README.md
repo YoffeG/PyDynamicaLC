@@ -68,6 +68,8 @@ Each of the following is a dictionary which should contain the exact entries lis
     # LDcoeff2: quadratic limb-darkening coefficient
     # r = numpy array of relative planet radii [r/R_star]
     # transit_width: a phase-window used to refine the time of mid-transit. if A is the max-TTV-amplitude, then transit_width should be more than the [transit duration + A] and significantly less than [0.5 - A]. Default: 0.05.
+    # ReBin_N
+    # ReBin_dt
 
 ## Dyn_Params: DYNAMICAL PARAMETERS
     # LC_mode: string specifying which mode of lightcurve generation to use. Can be "osc", "ecc" or "circ" (osculating, eccentric and quasi-circular, respectively)
