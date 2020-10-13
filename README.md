@@ -151,7 +151,7 @@ OUTPUT
 
  CLARIFICATION REGARDING t_mid FOR OSCULATING AND ECCENTRIC/QUASI-CIRCULAR CASES:
  
- Osculating: in this case, t_mid is simply the time of the first time of mid-transit with respect to t_min. The phase of the planet is then calculated by "reqinding" a Keplerian arc from that point to t_min (note: this is an approximation that may not be valid in very eccentric systems).
+ Osculating: in this case, t_mid is simply the time of the first time of mid-transit with respect to t_min. The phase of the planet is then calculated by "rewinding" a Keplerian arc from that point to t_min (note: this is an approximation that may not be valid in very eccentric systems).
  
  Eccentric/quasi-Circular: In this case, the value t_min represents the LINEAR APPROXIMATION of the first time of mid-transit. That is, the time of mid-transit of the given epoch in a linear ephemeris regime (we extracted this value by fitting a line to the observed times of transit. The value t_mind would then be the value of the fitted line at the given epoch).
 
