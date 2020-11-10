@@ -16,7 +16,7 @@ The package was developed within the research group of Prof. Oded Aharonson, Wei
 PyPI Package Release
 =======
 
-PyPi package release is currently under construction. Stay tuned!
+PyPI package release is currently under construction. Stay tuned!
  
 PyAstronomy
 =======
