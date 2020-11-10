@@ -1,5 +1,5 @@
 # PyDynamicaLC
-Pythonic photodynamical model generator, using three different configurations (quasi-circular, eccentric and osculating), in addition - an MCMC-coupled version is also provided, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](link). NOTE: please refer to our paper and the README provided here to fully fathom the approximations utilized in each of the configurations in this code.
+Pythonic photodynamical model generator, using three different configurations (quasi-circular, eccentric and osculating), in addition - an MCMC-coupled version is also provided, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](https://arxiv.org/abs/2011.04404). NOTE: please refer to our paper and the README provided here to fully fathom the approximations utilized in each of the configurations in this code.
 
 All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows (see example script):
 
@@ -13,7 +13,7 @@ The code relies on several existing open-source routines, the links to and insta
 
 The package was developed within the research group of Prof. Oded Aharonson, Weizmann Institute of Science, Israel.
 
-PyPi Package Release
+PyPI Package Release
 =======
 
 PyPi package release is currently under construction. Stay tuned!
@@ -163,7 +163,7 @@ OUTPUT
 Citations
 =======
 
-If you use this code, please cite [Yoffe et al. (2020)](link).
+If you use this code, please cite [Yoffe et al. (2020)](https://arxiv.org/abs/2011.04404).
 
 For TTVFast, please cite [Deck &amp; Agol (2014)](https://iopscience.iop.org/article/10.1088/0004-637X/787/2/132/pdf).
 
