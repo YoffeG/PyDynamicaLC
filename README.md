@@ -12,6 +12,11 @@ The code was tested on a Linux and OSx platform.
 The code relies on several existing open-source routines, the links to and installation guides of are listed below.
 
 The package was developed within the research group of Prof. Oded Aharonson, Weizmann Institute of Science, Israel.
+
+PyPi Release
+=======
+
+PyPi package release is currently under construction. Stay tuned!
  
 PyAstronomy
 =======
