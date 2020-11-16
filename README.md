@@ -23,7 +23,9 @@ The "Python" folder contains the installable version of PyDynamicaLC. Installati
 PyPI Package Release
 =======
 
-The initial version (0.0.2) is now available on PyPI. It can be pip-installed as follows: "pip install pydynamicalc"
+The initial version (0.0.2) is now available on PyPI. It can be pip-installed as follows: 
+
+    # pip install pydynamicalc
  
 PyAstronomy
 =======
