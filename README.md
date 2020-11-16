@@ -30,7 +30,9 @@ The initial version (0.0.2) is now available on PyPI. It can be pip-installed as
 Example Script
 =======
 
-The script "PyDynamicaLC_example_script.py" available here demonstrates all features of PyDynamicaLC with detailed inline documentation. We recommend the user to inspect the script and have it as a basis for using the code itself.
+The script "PyDynamicaLC_example_script.py" available here demonstrates all features of PyDynamicaLC with detailed inline documentation. We recommend the user to inspect the script and have it as a basis for using the code itself. 
+
+The file "LC_input_test.txt" contains the data of a simulated 3-planet light-curve, containing the times, fluxes and uncertainties thereof. This file is used by PyDynamicaLC_example_script.py in two instances: 1. to generate a synthetic light-curve sampled at the same times. 2. for the chi^2 statistic calculation of the MultiNest optimization routine (i.e. model and errors).
  
 PyAstronomy
 =======
