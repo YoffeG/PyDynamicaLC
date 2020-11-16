@@ -13,10 +13,20 @@ The code relies on several existing open-source routines, the links to and insta
 
 The package was developed within the research group of Prof. Oded Aharonson, Weizmann Institute of Science, Israel.
 
+
+Building
+=======
+
+To build this code, run:
+
+python setup.py install and then navigate to a different directory before you try to use it. If you want to run code from within this same directory, you should instead run
+
+python setup.py build_ext --inplace
+
 PyPI Package Release
 =======
 
-PyPI package release is currently under construction. Stay tuned!
+The initial version (0.0.2) is now available on PyPI. It can be pip-installed as follows: "pip install pydynamicalc"
  
 PyAstronomy
 =======
