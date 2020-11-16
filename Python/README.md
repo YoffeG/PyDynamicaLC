@@ -28,7 +28,9 @@ and then navigate to a different directory before you try to use it. If you want
 PyPI Package Release
 =======
 
-The initial version (0.0.2) is now available on PyPI. It can be pip-installed as follows: "pip install pydynamicalc"
+The initial version (0.0.2) is now available on PyPI. It can be pip-installed as follows:
+
+    # pip install pydynamicalc
  
 PyAstronomy
 =======
