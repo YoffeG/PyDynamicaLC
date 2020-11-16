@@ -26,6 +26,11 @@ PyPI Package Release
 The initial version (0.0.2) is now available on PyPI. It can be pip-installed as follows: 
 
     # pip install pydynamicalc
+    
+Example Script
+=======
+
+The script "PyDynamicaLC_example_script.py" available here demonstrates all features of PyDynamicaLC with detailed inline documentation. We recommend the user to inspect the script and have it as a basis for using the code itself.
  
 PyAstronomy
 =======
