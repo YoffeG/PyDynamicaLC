@@ -14,14 +14,11 @@ The code relies on several existing open-source routines, the links to and insta
 The package was developed within the research group of Prof. Oded Aharonson, Weizmann Institute of Science, Israel.
 
 
-Building
+Version 0.0.2
 =======
 
-To build this code, run:
+The "Python" folder contains the installable version of PyDynamicaLC. Installation instructions are given therein. The modified TTVFast version is enclosed in the folder "c_version_main". See below for installation instructions.
 
-python setup.py install and then navigate to a different directory before you try to use it. If you want to run code from within this same directory, you should instead run
-
-python setup.py build_ext --inplace
 
 PyPI Package Release
 =======
