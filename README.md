@@ -5,11 +5,10 @@ All functions in PyDyamicaLC must be imported, such that when integrated in a sc
 
 from PyDynamicaLC import *
 
-List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner, os
+List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner
+The links thereto and installation guides of are listed below.
 
 The code was tested on a Linux and OSx platform.
-
-The code relies on several existing open-source routines, the links to and installation guides of are listed below.
 
 The package was developed within the research group of Prof. Oded Aharonson, Weizmann Institute of Science, Israel.
 
