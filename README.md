@@ -74,7 +74,7 @@ Each of the following is a dictionary which should contain the exact entries lis
     # dt = time step during the integration [days]
     
 ## Paths:
-    # dyn_path: Path to TTVFast folder (should end with "c_version/")
+    # dyn_path: Path to TTVFast folder (should end with "/c_version_main/")
     # dyn_path_OS: Same path as dyn_path, except that it should be compatible with OS
     # dyn_file_name: This file is internally used by TTVFast to receive the initial condition and integration parameters. This string is the header of file - make sure to change it if several simulations are run simultaneously
     # Coords_output_fileName: name of the desired cartesian coordinates file from TTVFast.
