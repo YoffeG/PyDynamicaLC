@@ -1,11 +1,8 @@
 # PyDynamicaLC
 Pythonic photodynamical model generator, using three different configurations (quasi-circular, eccentric and osculating), in addition - an MCMC-coupled version is also provided, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](https://arxiv.org/abs/2011.04404). NOTE: please refer to our paper and the README provided here to fully fathom the approximations utilized in each of the configurations in this code.
 
-All functions in PyDyamicaLC must be imported, such that when integrated in a script, import as follows (see example script):
+List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner (when installed through PyPI, they are all automatically downloaded)
 
-from PyDynamicaLC import *
-
-List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner
 The links thereto and installation guides of are listed below.
 
 The code was tested on a Linux and OSx platform.
