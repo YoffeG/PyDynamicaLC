@@ -1046,8 +1046,8 @@ def multinest_analyzer(params, analyzer_params, Dyn_Params, Phot_Params, Integra
         if analyzer_params["plot_bestfit_LC"] == True:
 
             #### Turning the delta_ex, delta_ey values into absolute eccentricity components
-            ex = np.array([best_fit_ex[0]] + [best_fit_ex[0] + best_fit_ex[i] for i in range(1, nPl)])
-            ey = np.array([best_fit_ey[0]] + [best_fit_ey[0] + best_fit_ey[i] for i in range(1, nPl)])
+            ex = np.array([best_fit_ex[0]] + [best_fit_ex[i - 1] + best_fit_ex[i] for i in range(1, nPl)])
+            ey = np.array([best_fit_ey[0]] + [best_fit_ey[i - 1] + best_fit_ey[i] for i in range(1, nPl)])
 
             Dyn_Params["masses"] = best_fit_masses
             Dyn_Params["ecosomega"] = ex
