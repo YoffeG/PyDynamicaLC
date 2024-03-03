@@ -1,9 +1,9 @@
 # PyDynamicaLC
-Pythonic photodynamical model generator, using three different configurations (quasi-circular, eccentric and osculating), in addition, an MCMC-coupled version is also provided, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2020)](https://arxiv.org/abs/2011.04404). NOTE: please refer to our paper and the README provided here to fully be made aware of the approximations utilized in each of the configurations in this code.
+Pythonic photodynamical model generator, using three different configurations (quasi-circular, eccentric and osculating), in addition, an MCMC-coupled version is also provided, which allows optimization of planetary masses and eccentricities as presented in [Yoffe et al. (2021)](https://iopscience.iop.org/article/10.3847/1538-4357/abc87a). NOTE: please refer to our paper and the README provided here to fully be made aware of the approximations utilized in each of the configurations in this code.
 
-List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner (when installed through PyPI, they are all automatically downloaded). NOTE: TTVFast, the n-body integrator required for the osculating configuration cannot be pip-installed, since PyDynamicaLC requires a modified version thereof, which is only available here and is enclosed in the folder "c_version_main". See below for installation instructions.
+List of ALL external Python libraries used: Pylab, Scipy, PyAstronomy, PyMultiNest, ttvfaster, corner (when installed through PyPI, they are all automatically downloaded). NOTE: TTVFast, the n-body integrator required for the osculating configuration, cannot be pip-installed, since PyDynamicaLC requires a modified version thereof, which is only available here and is enclosed in the folder "c_version_main". See below for installation instructions.
 
-The links thereto and installation guides of are listed below.
+The links thereto and installation guides are listed below.
 
 The code was tested on a Linux and OSx platform.
 
@@ -26,9 +26,9 @@ The initial version (0.0.2) is now available on PyPI. It can be pip-installed as
 Example Script
 =======
 
-The script "PyDynamicaLC_example_script.py" available here demonstrates all features of PyDynamicaLC with detailed inline documentation. We recommend the user to inspect the script and have it as a basis for using the code itself. 
+The script "PyDynamicaLC_example_script.py" available here demonstrates all features of PyDynamicaLC with detailed inline documentation. We recommend the user inspect the script and have it as a basis for using the code itself. 
 
-The file "LC_input_test.txt" contains the data of a simulated 3-planet light-curve, containing the times, fluxes and uncertainties thereof. This file is used by PyDynamicaLC_example_script.py in two instances: 1. to generate a synthetic light-curve sampled at the same times. 2. for the chi^2 statistic calculation of the MultiNest optimization routine (i.e. model and errors).
+The file "LC_input_test.txt" contains the data of a simulated 3-planet light-curve, containing the times, fluxes, and uncertainties thereof. This file is used by PyDynamicaLC_example_script.py in two instances: 1. to generate a synthetic light-curve sampled at the same times. 2. for the chi^2 statistic calculation of the MultiNest optimization routine (i.e., model and errors).
  
 PyAstronomy
 =======
@@ -41,7 +41,7 @@ Information regarding installation can be found here: https://github.com/sczesla
 TTVFast (C) - NOTE: the required modified version may only be downloaded here 
 =======
 
-This routine is one out of two possibilities to simulate planetary dynamics (the other being TTVFaster). TTVFast is a simplectic n-body integrator, whereas TTVFaster is a semi-analytic model accurate to first order in eccentricity which approximates TTVs using a series expansion.
+This routine is one out of two possibilities to simulate planetary dynamics (the other being TTVFaster). TTVFast is a simplectic n-body integrator, whereas TTVFaster is a semi-analytic model accurate to first order in eccentricity, which approximates TTVs using a series expansion.
 
 We modified TTVFast to output the instantaneous osculating Keplerian parameters at each time of mid-transit, with which each individual transit shape and timing is determined in the "osculating" mode.
 
@@ -52,14 +52,14 @@ All associated information regarding TTVFast (C) can be found here: https://gith
 TTVFaster
 =======
 
-This routine is one out of two possibilities to simulate planetary dynamics (the other being TTVFast). TTVFast is a simplectic n-body integrator, whereas TTVFaster is a semi-analytic model accurate to first order in eccentricity which approximates TTVs using a series expansion.
+This routine is one out of two possibilities to simulate planetary dynamics (the other being TTVFast). TTVFast is a simplectic n-body integrator, whereas TTVFaster is a semi-analytic model accurate to first order in eccentricity, which approximates TTVs using a series expansion.
 
 Information regarding installation can be found here: https://github.com/ericagol/TTVFaster
 
 PyMultiNest
 =======
 
-A multi-modal Markov Chain Monte Carlo algorithm with implementation in Python used as our fitter of choice.
+A multi-modal Markov Chain Monte Carlo algorithm with implementation in Python was used as our fitter of choice.
 
 Information regarding installation can be found here: https://johannesbuchner.github.io/PyMultiNest/
 
@@ -122,7 +122,7 @@ Each of the following is a dictionary which should contain the exact entries lis
 RUNNING MULTINEST
 ===
 
-The following two dictionaries are required to run the MultiNest fitter example. The fitter uses TTVFaster-based dynamical modelling to optimize the planetary masses, delta_ex and delta_ey (ex and ey for the inner planets) of the input system. Since TTVFaster is currently the only option for the optimization routine, LC_mode should either be "circ" or "ecc".
+The following two dictionaries are required to run the MultiNest fitter example. The fitter uses TTVFaster-based dynamical modeling to optimize the planetary masses, delta_ex, and delta_ey (ex and ey for the inner planets) of the input system. Since TTVFaster is currently the only option for the optimization routine, LC_mode should either be "circ" or "ecc".
       
  ## MultiNest_params: Optimization parameters for MultiNest
     # mode: Optimization mode. At this moment, this can only be "TTVFaster" (string)
